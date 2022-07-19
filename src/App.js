@@ -24,17 +24,18 @@ const dummyExpenses = [
   },
 ];
 const App = () => {
-  const [expenses,setExpenses] = useState(dummyExpenses);
+  const [expenses, setExpenses] = useState(dummyExpenses);
 
 
 
-  const addExpenseHandler = (expense) => {
+  const addExpenseHandler = expense => {
     //console.log("in app js");
     //console.log(expense);
     setExpenses((prevExpenses)=>{
       return [expense, ...prevExpenses];
     })
   };
+  
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
